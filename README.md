@@ -2,7 +2,7 @@
 
 Website to view popular Anime and get recommendations. Built with Flask, React, and Jikan API.
 You can check it out at the following link:
-https://fanime2.herokuapp.com/
+https://fanime-beta.vercel.app/
 
 # Screenshots
 
