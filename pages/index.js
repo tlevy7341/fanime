@@ -5,7 +5,7 @@ import PageHeader from "../components/PageHeader";
 const Home = ({ animes }) => {
   return (
     <div>
-      <NextNProgress height={5} />
+      <NextNProgress height={5} options={{ showSpinner: false }} />
       <PageHeader title="Top Anime Shows" />
       <AnimeGrid animes={animes} />
     </div>

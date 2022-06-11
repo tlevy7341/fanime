@@ -1,3 +1,4 @@
+import "react-toastify/dist/ReactToastify.css";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 

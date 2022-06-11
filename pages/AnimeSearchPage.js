@@ -1,5 +1,4 @@
 import NextNProgress from "nextjs-progressbar";
-import React from "react";
 import AnimeGrid from "../components/AnimeGrid";
 import PageHeader from "../components/PageHeader";
 
@@ -27,10 +26,9 @@ const AnimeSearchPage = ({ animes, searchTerm }) => {
 
 export default AnimeSearchPage;
 
-export const getServerSideProps = async (context) => {
-  const searchTerm = context.query.search;
+export const getServerSideProps = async ({ query }) => {
+  const searchTerm = query.search;
   const animes = await searchAnime(searchTerm);
-
   return {
     props: { animes, searchTerm },
   };

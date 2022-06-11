@@ -1,5 +1,4 @@
 import NextNProgress from "nextjs-progressbar";
-import React from "react";
 import AnimeGrid from "../components/AnimeGrid";
 import GenreSection from "../components/GenreSection";
 import ImageSection from "../components/ImageSection";
@@ -60,8 +59,8 @@ const AnimePage = ({ anime }) => {
 
 export default AnimePage;
 
-export const getServerSideProps = async (context) => {
-  const parsedAnime = JSON.parse(context.query.anime);
+export const getServerSideProps = async ({ query }) => {
+  const parsedAnime = JSON.parse(query.anime);
   const anime = await getRecommendations(parsedAnime);
   return {
     props: { anime },

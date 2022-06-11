@@ -1,17 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { FaStar } from "react-icons/fa";
 
 const AnimeCard = ({ anime }) => {
   const animeImage = anime.image_url || anime.images.webp.image_url;
   const hasScore = anime.score !== undefined;
+  const hasArrayOfEpisodes = Array.isArray(anime.episodes);
 
   return (
     <Link
       href={{
-        pathname: "AnimePage",
-
+        pathname: !hasArrayOfEpisodes ? "AnimePage" : "AnimeWatchedPage",
         query: { anime: JSON.stringify(anime) },
       }}
       as={`${anime.title}`}
