@@ -21,7 +21,7 @@ const ShowModal = ({ setShowModal, showModal }) => {
       return;
     }
 
-    fetch("https://fanime-beta.vercel.app/api/users", {
+    fetch("api/users", {
       method: "POST",
       body: JSON.stringify({ email }),
     }).then((res) =>
